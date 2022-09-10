@@ -1,0 +1,411 @@
+*, *::before, *::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+@font-face {
+    font-family: mazi;
+    src: url("./assets/MAZIUSREVIEW20.09-Regular.otf");
+}
+
+@font-face {
+    font-family: calibril;
+    src: url("./assets/calibril.ttf");
+}
+
+:root{
+    --purpleish:hsl(259, 56%, 47%);
+    --lightPurplish: hsla(259, 56%, 47%, 0.09);
+    --bgPurplish:hsl(260, 100%, 97%);
+}
+
+*::selection{
+    background-color: var(--purpleish);
+    color: white;
+}
+
+/* -------------------------- */
+section.home-section{
+    max-width: 85vw;
+    margin:13rem auto;
+}
+
+.heading{
+    margin: 0 0 3rem 0rem;
+}
+
+.heading h1{
+    font-family: mazi;
+    font-size: 5rem;
+    letter-spacing: .2rem;
+}
+
+.heading p{
+    font-size: 1.5rem;
+    font-family: calibril, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-style: italic;
+}
+
+.search{
+    background-color: hsl(0, 0%, 93%);
+    padding: .5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    max-width: 30rem;
+    border-radius: .4rem;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    -ms-border-radius: .4rem;
+    -o-border-radius: .4rem;
+    margin: 0 0 1.5rem 0rem;
+}
+
+.search input{
+    background-color: transparent;
+    border: none;
+    width:70vw;
+    max-width: 25rem;
+    outline:none ;
+}
+
+.search input::placeholder{
+    opacity: .4;
+    font-size: 1.4rem;
+}
+
+.home-section h2{
+    font-size: 3rem;
+    font-family: mazi;
+    letter-spacing: .1rem;
+    margin: 2rem 0 1rem 0rem;
+    font-weight: 500;
+}
+
+.pronunciation{
+    font-family: calibri;
+}
+
+.recent div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: max-content;
+    margin: 0 0 1rem 0rem;
+}
+
+.recent div p{
+    font-size: 2rem;
+    font-family: calibril, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 1rem 0 0;
+}
+
+.recent div img{
+    max-width: 2rem;
+}
+
+/* styling for the results page on mobile and tablets*/
+.result-section{
+    background-color: var(--bgPurplish);
+}
+
+.result-section header{
+    max-width: 100%;
+    padding: 1.5rem 0;
+   box-shadow: 0 .1rem .7rem rgba(0, 0, 0, 0.11);
+   display: flex;
+   align-items: center;
+   background-color: white;
+}
+
+.result-section header .controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 85vw;
+    margin: auto;
+}
+
+.result-section header .controls img.back-button{
+    margin: 0 2rem 0 0;
+}
+
+.result-section .search{
+    margin:0rem;
+    width: 85vw;
+    background-color: hsl(0, 0%, 96%);
+    border: 1px solid hsla(258, 94%, 7%, 0.075);
+}
+
+form{
+    width: 100%;
+}
+
+.search input{
+    background-color: transparent;
+    width: 100%;
+    max-width: 55rem;
+}
+
+.result-section .body{
+    max-width: 85vw;
+    padding: 2rem 0 0;
+    margin: 0rem auto;
+    height: 100vh;
+}
+
+.body .word-and-speaker{
+    display: flex;
+    align-items: flex-end;
+}
+
+.body .word-and-speaker h1{
+    font-size: 4rem;
+    font-family: mazi;
+    letter-spacing: .2rem;
+    margin: 0 1rem 0 0;
+    text-transform: capitalize;
+}
+
+.body .pronunciation{
+    font-size: 1.9rem;
+    margin: .5rem 0 3rem 0;
+}
+
+.body .parts-of-speech{
+    max-width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0 0 1rem 0;
+}
+
+.body .parts-of-speech p{
+    background-color: #0B0122;
+    opacity: .4;
+    margin: 0 2rem 1rem 0;
+    padding: .5rem 2rem;
+    font-size: 1.5rem;
+    font-family: calibril, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:white;
+    transition: .2s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+}
+
+.body .parts-of-speech p::first-letter{
+    text-transform: capitalize;
+}
+
+.body .parts-of-speech p.active{
+    background-color: var(--purpleish);
+    opacity: 1;
+}
+
+.none{
+    display: none;
+}
+
+.body .descriptions p{
+    margin: 0 0 2rem 0;
+    font-size: 1.7rem;
+    font-family: calibril, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.3;
+    width: 100%;
+    max-width: 60rem;
+}
+
+.body .descriptions p.first{
+    background-color:var(--lightPurplish);
+    position: relative;
+    margin: 0 0 2rem .9rem;
+    padding: .3rem .3rem .3rem .3rem;
+    max-width: 98%;
+}
+
+.body .descriptions p.first::before{
+    content: '';
+    height: 100%;
+    width: .7rem;
+    background-color: var(--purpleish);
+    position: absolute;
+    top:0;
+    left:-.8rem;
+}
+
+.body .descriptions p::first-letter{
+    font-size: 2.3rem;
+    font-weight: 900;
+}
+
+.body .external-link{
+    font-size: 1.6rem;
+    font-family: calibril, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 4rem 0 0 0;
+    max-width: 60rem;
+}
+
+.body .external-link a{
+    font-style: italic;
+    color: hsl(259, 56%, 47%);
+    word-wrap: break-word;
+}
+
+.recent{
+    max-height: 20rem;
+    width: 82vw;
+    max-width: 50rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    padding: 1rem;
+    background-image: linear-gradient(transparent 40%, var(--lightPurplish));
+}
+
+.recent-word{
+    font-family: calibril, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.9rem;
+    color: grey;
+    margin: 2rem 0 0 0;
+    opacity: .5;
+}
+
+.err{
+    font-family: calibril, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.7rem;
+    margin: 2rem 0;
+    background-color: hsla(0, 97%, 69%, 0.377);
+    padding: .9rem;
+    max-width: fit-content;
+    color: rgb(114, 0, 0);
+    border: 2px solid var(--lightPurplish);
+    font-weight: 100;
+}
+
+h2.res{
+    font-family: calibril, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: normal;
+    margin: 2rem 0;
+    background-color: hsla(138, 100%, 50%, 0.377);
+    padding: .9rem;
+    max-width: fit-content;
+    color: hsl(130, 84%, 13%);
+    border: 2px solid var(--lightPurplish);
+    font-weight: 100;
+    max-width: 60rem;
+}
+
+h2.res::selection{
+    background-color: hsl(125, 90%, 51%);
+    color: hsl(130, 84%, 23%);
+}
+
+.err::selection{
+    background-color: rgb(196, 11, 11);
+}
+
+h1.load{
+    width:90vw;
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 25rem;
+    font-size: 1.9rem;
+    font-weight: 400;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    padding: 4rem 2rem;
+    box-shadow: 0 0 0rem 225rem var(--bgPurplish);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    font-family: calibri;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    animation: fade infinite 1s ease-in-out alternate;
+    -webkit-animation: fade infinite 1s ease-in-out alternate;
+}
+
+@keyframes fade {
+    100%{
+       background-color: var(--bgPurplish);
+       color: var(--bgPurplish);
+    }
+}
+
+/* styling for laptops*/
+@media screen and (min-width:700px) {
+    .heading h1{
+        font-size: 7rem;
+        letter-spacing: .1rem;
+    }
+
+    .search{
+        padding: .7rem 1.5rem;
+        width:80vw;
+        max-width: 40rem;
+    }
+
+    .body .word-and-speaker h1{
+        letter-spacing: .1rem;
+    }
+}
+
+@media screen and (min-width:900px) {
+    .result-section .body{
+        max-width: 60rem;
+    }
+
+    .body .word-and-speaker h1{
+        font-family: mazi;
+        font-size: 5rem;
+    }
+
+    .body .descriptions p{
+        font-size: 1.9rem;
+    }
+}
+
+/* hover styles */
+.recent div img:hover{
+    cursor: pointer;
+}
+
+.result-section header .controls img:hover{
+    cursor: pointer;
+}
+
+.body .word-and-speaker img{
+    cursor: pointer;
+}
+
+.body .parts-of-speech p:hover{
+    cursor: pointer;
+    padding: .5rem 2.5rem;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.search-mag:hover{
+    cursor: pointer;
+}
